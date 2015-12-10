@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+  <head>
+    <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script src="github.js"></script>
+  </head>
+
+  <body ng-controller="MainController">
+    <h1>{{ message }}</h1>
+    <div>{{ alsoMessage }}</div>
+    <p>10/2={{ 10 / 2 }} (this is not from the controller)</p>
+    <div>
+      <h2>Complex object</h2>
+      <div>First name: {{person.firstName}}</div>
+      <div>Last name: {{person.lastName}}</div>
+      <div>
+        <img ng-src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}"/>
+      </div>
+      
+      <h2 id="userDetails">From GitHub API</h2>
+      <div ng-hide="!countdown">Auto-search in {{ countdown }} sec.</div>
+      <form name="SearchUser" ng-submit="search(username)">
+        <input type="search" required placeholder="Username to find" ng-model="username" />
+        <input type="submit" value="Search" />
+      </form>
+      
+      <div ng-include="'githubdetails.html'" ng-show="user"></div>
+      
+    </div>
+  </body>
+ 
+</html>
