@@ -1,0 +1,20 @@
+<div>
+  <h2>{{ message }}</h2>
+  <div>{{ alsoMessage }}</div>
+  <p>10/2={{ 10 / 2 }} (this is not from the controller)</p>
+  <div>
+    <h2>Complex object</h2>
+    <div>First name: {{person.firstName}}</div>
+    <div>Last name: {{person.lastName}}</div>
+    <div>
+      <img ng-src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}" />
+    </div>
+    
+    <h2 id="userDetails">From GitHub API</h2>
+    <div ng-hide="!countdown">Auto-search in {{ countdown }} sec.</div>
+    <form name="SearchUser" ng-submit="search(username)">
+      <input type="search" required="" placeholder="Username to find" ng-model="username" />
+      <input type="submit" value="Search" />
+    </form>
+  </div>
+</div>
